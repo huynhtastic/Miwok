@@ -7,10 +7,19 @@ public class Word {
 
     private String mDefaultTranslation;
     private String mMiwokTranslation;
+    private int mImageResourceId = NO_IMAGE_PROVIDED;
+
+    private static final int NO_IMAGE_PROVIDED = -1;
 
     public Word(String defaultTranslation, String miwokTranslation) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+    }
+
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId) {
+        mDefaultTranslation = defaultTranslation;
+        mMiwokTranslation = miwokTranslation;
+        mImageResourceId = imageResourceId;
     }
 
     /**
@@ -28,5 +37,17 @@ public class Word {
     public String getDefaultTranslation() {
         return mDefaultTranslation;
     }
+
+    /**
+     * Get the image resource id associated with this word
+     * @return the image resource id (int)
+     */
+    public int getImageResourceId() { return mImageResourceId; }
+
+    /**
+     * Returns whether or not there is an image provided with this word
+     * @return true if the word has an associated image; false if otherwise
+     */
+    public boolean hasImage() { return mImageResourceId != NO_IMAGE_PROVIDED; }
 
 }

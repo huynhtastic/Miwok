@@ -80,7 +80,7 @@ public class PhrasesFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.v("PhrasesActivity", "Current Word: " + words.get(position));
+                Log.v("PhrasesFragment", "Current Word: " + words.get(position));
                 int fileId = words.get(position).getAudioResourceId();
                 releaseMediaPlayer();
                 int request = mAudioManager.requestAudioFocus(
